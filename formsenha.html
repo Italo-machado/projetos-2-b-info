@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>formula sanha</title>
+    </head>
+    <body>
+        <script>
+            function oi(){
+                var senha = document.getElementById('senha').value;
+                var confirma = document.getElementById('confirma').value;
+                var botao = document.getElementById('botao')
+                if (senha == confirma){
+                    window.alert ('senhas iguais');
+                    botao.style.backgroundColor = 'red';
+                    botao.disabled = false
+                   // document.getElementById('formulario').submit();
+                }else{
+                    window.alert('senhas diferentes');
+                    botao.style.backgroundColor = 'green';
+                }
+            }
+        </script>
+        <h2>digite seu usuario e senha</h2>
+        <br>
+        <form action="recebesenha.php" method="POST" id="formulario">
+        <label>usuario: </label><input type="text" name="usuario" id="usuario" >
+        <br>
+        <label>senha: </label><input type="password" name="senha" id="senha" />
+        <br>
+        <label>comfirmar senha</label><input type="password" id="confirma" onchange="oi()">
+        <br>
+        <button type="button" onclick="oi()"id="botao" disabled>fazer cadastro</button>
+        </form>
+
+
+
+    </body>
+</html>
